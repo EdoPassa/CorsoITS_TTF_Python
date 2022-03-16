@@ -1,4 +1,4 @@
-'''
+
 val_base_10 = int(input('Inserisci una numero in base 10(>0): '))
 base = int(input('Inserisci la nuova base(2-16): '))
 
@@ -26,12 +26,6 @@ else:
         print(val_base_10)
     else:
         print(chr(val_base_10 + ord('A')-10))
-'''
 
-val_base_b1_str = input('inserisci un valore: ')
-b1 = input('in che base è: ')
-b2 = input('in che base lo vuoi: ')
 
-val_base_b1_list = []
-val_base_b1_list[:0] = val_base_b1_str
-val_base_10_list = []
+
