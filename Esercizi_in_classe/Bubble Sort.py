@@ -1,21 +1,21 @@
 lista = []
-x = int(input('Inserischi un numero intero, 0 per terminare: '))
+x = int(input('Inserisci un numero intero, 0 per terminare: '))
 while x != 0:
     lista.append(x)
-    x = int(input('Inserischi un numero intero, 0 per terminare: '))
+    x = int(input('Inserisci un numero intero, 0 per terminare: '))
 print('Lista da sortare: {}'.format(lista))
 
-n = len(lista)
-sort = False
-for j in range(0, n-1):
-    if not sort:
-        sort = True
-        for i in range(0, n-1-j):
-            if lista[i] > lista[i+1]:
-                lista[i], lista[i+1] = lista[i+1], lista[i]
-                sort = False
-        print('Ciclo {}: {}'.format(j, lista))
-    else:
-        break
+# Seconda ottimizzazione, non ho salvato le precedenti :(
+n = len(lista); i = 0; last = n-1; scambio = 0
+while i < n-1 and scambio > -1:
+    j = 0; scambio = -1
+    while j < last:
+        if lista[j] > lista[j+1]:
+            lista[j], lista[j+1] = lista[j+1], lista[j]
+            scambio = j
+        j += 1
+    last = scambio
+    i += 1
+
 
 print('Lista sortata: {}'.format(lista))
